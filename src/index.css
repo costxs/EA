@@ -81,6 +81,7 @@ a {
   justify-content: space-between;
   align-items: center;
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -116,6 +117,7 @@ a {
   gap: 5rem;
   align-items: center;
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -211,6 +213,7 @@ a {
 
 .projects-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -386,6 +389,7 @@ a {
 
 .partners-grid {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -472,6 +476,7 @@ a {
 
 .footer-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -538,6 +543,7 @@ a {
 
 .news-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
 }
 

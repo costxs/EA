@@ -18,10 +18,10 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                 transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
                 style={{
                     position: "fixed",
-                    top: 0,
+                    top: "-10vh",
                     left: 0,
-                    width: "55%",
-                    height: "100vh",
+                    width: "60vw",
+                    height: "120vh",
                     background: "#111", // Cinza/Preto super escuro
                     zIndex: 9998,
                 }}
@@ -34,10 +34,10 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                 transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
                 style={{
                     position: "fixed",
-                    top: 0,
+                    top: "-10vh",
                     right: 0,
-                    width: "55%",
-                    height: "100vh",
+                    width: "60vw",
+                    height: "120vh",
                     background: "#111",
                     zIndex: 9998,
                 }}
