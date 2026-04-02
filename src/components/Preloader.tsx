@@ -20,7 +20,7 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                     position: "fixed",
                     top: "-10vh",
                     left: 0,
-                    width: "60vw",
+                    width: "55%",
                     height: "120vh",
                     background: "#111", // Cinza/Preto super escuro
                     zIndex: 9998,
@@ -36,7 +36,7 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                     position: "fixed",
                     top: "-10vh",
                     right: 0,
-                    width: "60vw",
+                    width: "55%",
                     height: "120vh",
                     background: "#111",
                     zIndex: 9998,
