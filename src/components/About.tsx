@@ -1,36 +1,13 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useData } from '../hooks/useData';
 
 const MotionLink = motion(Link);
 
-const projects = [
-    {
-        id: 1,
-        title: "EA Saberes",
-        description: "Levando consciência ambiental e sustentabilidade para formar as futuras lideranças do amanhã nas salas de aula.",
-        image: "/assets/EA.jpg",
-        hoverImage: "/assets/EA-hover.jpg",
-        link: "/projetos/escolas"
-    },
-    {
-        id: 2,
-        title: "Conectando-se com o Ambiente",
-        description: "Engajamento local em práticas sustentáveis, hortas urbanas comunitárias e valorização do meio ambiente.",
-        image: "/assets/conectando.png",
-        hoverImage: "/assets/conectando-hover.jpg",
-        link: "/projetos/comunidade"
-    },
-    {
-        id: 3,
-        title: "Meios Digitais",
-        description: "Conscientização em massa através de campanhas impactantes e conteúdo informativo totalmente digital.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-        link: "/projetos/digitais"
-    }
-];
-
 export default function About() {
+    const { projects } = useData();
+
     return (
         <section id="sobre" className="projects-section">
             <div className="projects-container">

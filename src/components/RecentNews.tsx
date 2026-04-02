@@ -1,35 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const newsItems = [
-    {
-        id: 1,
-        date: "VEM AÍ - 15 Mar 2026",
-        title: "Oficina de Hortas Urbanas e Tecnologias Sustentáveis",
-        category: "COMUNIDADE",
-        image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=1200",
-        link: "/noticias/1"
-    },
-    {
-        id: 2,
-        date: "08 Mar 2026",
-        title: "O Sucesso da Semana da Água nas Escolas Brasileiras",
-        category: "EDUCAÇÃO",
-        image: "https://images.unsplash.com/photo-1577880216142-8549e9488dad?auto=format&fit=crop&q=80&w=800",
-        link: "/noticias/2"
-    },
-    {
-        id: 3,
-        date: "28 Fev 2026",
-        title: "Lançamento da Campanha 'Desperdício Zero'",
-        category: "DIGITAL",
-        image: "https://images.unsplash.com/photo-1532996122724-c0ecce11b816?auto=format&fit=crop&q=80&w=800",
-        link: "/noticias/3"
-    }
-];
+import { useData } from '../hooks/useData';
 
 export default function RecentNews() {
+    const { news } = useData();
+
     return (
         <section className="news-section">
             <div className="news-container">
@@ -69,20 +45,20 @@ export default function RecentNews() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <div className="news-image-wrapper">
-                            <img src={newsItems[0].image} alt={newsItems[0].title} />
-                            <div className="news-badge">{newsItems[0].category}</div>
+                            <img src={news[0].image} alt={news[0].title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.1)' }} />
+                            <div className="news-badge">{news[0].category}</div>
                         </div>
                         <div className="news-content">
                             <div className="news-meta">
-                                <Clock size={16} /> <span>{newsItems[0].date}</span>
+                                <Clock size={16} /> <span>{news[0].date}</span>
                             </div>
-                            <h3>{newsItems[0].title}</h3>
+                            <h3>{news[0].title}</h3>
                         </div>
                     </motion.div>
 
                     {/* Small Cards */}
                     <div className="news-grid-small">
-                        {newsItems.slice(1).map((item, index) => (
+                        {news.slice(1).map((item, index) => (
                             <motion.div
                                 className="news-small-card"
                                 key={item.id}

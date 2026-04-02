@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
 const partners = [
-    { id: 1, name: "Universidade Federal do Pará", logo: "/assets/ufpa-logo.png" },
-    { id: 2, name: "Pró-Reitoria de Extensão", logo: "/assets/proex-logo.jpg" },
-    { id: 3, name: "Laboratório de Inovação Interdisciplinar", logo: "/assets/labx.png" },
-    { id: 4, name: "Logo 4", logo: null },
-    { id: 5, name: "Logo 5", logo: null },
-    { id: 6, name: "Logo 6", logo: null },
+    { id: 1, name: "Universidade Federal do Pará", logo: `${import.meta.env.BASE_URL}assets/ufpa-logo.png` },
+    { id: 2, name: "Pró-Reitoria de Extensão", logo: `${import.meta.env.BASE_URL}assets/proex-logo.jpg` },
+    { id: 3, name: "Laboratório de Inovação Interdisciplinar", logo: `${import.meta.env.BASE_URL}assets/labx.png` },
+    { id: 4, name: "Laboratório de Física Industrial", logo: `${import.meta.env.BASE_URL}assets/LAFI.png` },
+    { id: 5, name: "GEMAR", logo: `${import.meta.env.BASE_URL}assets/gemar.png` },
+    { id: 6, name: "UFPA_SAL", logo: `${import.meta.env.BASE_URL}assets/UFPA_SAL.png` },
 ];
 
 export default function Pillars() {

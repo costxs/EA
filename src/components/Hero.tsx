@@ -36,7 +36,7 @@ export default function Hero() {
                     Educação <br /> <span className="italic">Ambiental</span>
                 </h1>
                 <p className="hero-subtitle">Cultivando consciência, plantando o futuro. Projeto de extensão acadêmica focado em reconectar a comunidade com a natureza.</p>
-                <PillButton href="#sobre">
+                <PillButton onClick={() => window.scrollBy({ top: window.innerHeight - 80, behavior: 'smooth' })}>
                     DESCUBRA
                 </PillButton>
             </motion.div>
@@ -53,7 +53,7 @@ export default function Hero() {
                 >
                     <motion.video
                         ref={videoRef}
-                        src="/assets/0306-01.mp4"
+                        src="./assets/0306-01.mp4"
                         muted
                         playsInline
                         preload="auto"

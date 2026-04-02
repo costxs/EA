@@ -20,7 +20,7 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                     position: "fixed",
                     top: 0,
                     left: 0,
-                    width: "50vw",
+                    width: "55%",
                     height: "100vh",
                     background: "#111", // Cinza/Preto super escuro
                     zIndex: 9998,
@@ -36,7 +36,7 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                     position: "fixed",
                     top: 0,
                     right: 0,
-                    width: "50vw",
+                    width: "55%",
                     height: "100vh",
                     background: "#111",
                     zIndex: 9998,
@@ -56,12 +56,14 @@ export default function Preloader({ setLoading }: { setLoading: (v: boolean) => 
                     alignItems: "center",
                     justifyContent: "center",
                     zIndex: 9999,
-                    pointerEvents: "none" // Pra não atrapalhar clicks em loading
+                    pointerEvents: "none", // Pra não atrapalhar clicks em loading
+                    padding: "0 1rem",
+                    boxSizing: "border-box"
                 }}
             >
-                <span className="loader-text" style={{ color: "#fff", margin: 0 }}>
+                <div className="loader-text" style={{ color: "#fff", margin: 0, textAlign: "center" }}>
                     Educação Ambiental<span style={{ color: '#8c9071' }}>.</span>
-                </span>
+                </div>
             </motion.div>
         </>
     );
