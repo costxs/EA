@@ -1,20 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useData } from '../hooks/useData';
-import { Settings, Plus, LogOut, Trash2, Home, Newspaper, User, Moon, UploadCloud, Link } from 'lucide-react';
-
-const extractDriveId = (url: string) => {
-    const match = url.match(/\/d\/(.*?)\//) || url.match(/id=(.*?)(&|$)/);
-    return match ? match[1] : url;
-};
-
-const getDriveDirectUrl = (url: string) => {
-    if (url.includes('drive.google.com')) {
-        const id = extractDriveId(url);
-        return `https://drive.google.com/uc?id=${id}`;
-    }
-    return url;
-};
+import { Settings, Plus, LogOut, Trash2, Home, Newspaper, User, UploadCloud, Link } from 'lucide-react';
 
 export default function Admin() {
     const [loggedIn, setLoggedIn] = useState(() => localStorage.getItem('ea_admin_logged_in') === 'true');
@@ -72,15 +59,6 @@ export default function Admin() {
     const handleLogout = () => {
         setLoggedIn(false);
         localStorage.removeItem('ea_admin_logged_in');
-    };
-
-    const fileToBase64 = (file: File): Promise<string> => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result as string);
-            reader.onerror = error => reject(error);
-        });
     };
 
     const handleNewsSubmit = async (e: React.FormEvent) => {

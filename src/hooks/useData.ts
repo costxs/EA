@@ -110,7 +110,7 @@ export function useData() {
     useEffect(() => {
         async function fetchNews() {
             try {
-                const { data, error } = await supabase
+                const { data } = await supabase
                     .from('news')
                     .select('*')
                     .order('created_at', { ascending: false });
@@ -126,7 +126,7 @@ export function useData() {
     useEffect(() => {
         async function fetchProjects() {
             try {
-                const { data, error } = await supabase
+                const { data } = await supabase
                     .from('projects')
                     .select('*')
                     .order('created_at', { ascending: false });
