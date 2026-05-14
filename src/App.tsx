@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Admin from './pages/Admin';
 
 export default function App() {
+  console.log('BASE_URL:', import.meta.env.BASE_URL);
   return (
     <Router>
       <ScrollToTop />

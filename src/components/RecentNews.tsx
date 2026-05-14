@@ -6,6 +6,10 @@ import { useData } from '../hooks/useData';
 export default function RecentNews() {
     const { news } = useData();
 
+    if (!news || news.length === 0) {
+        return null; // Or return a fallback UI
+    }
+
     return (
         <section className="news-section">
             <div className="news-container">

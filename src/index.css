@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,16 @@
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+  --accent: #8c9071;
+}
+
+.pattern-bg {
+  background-image:
+    radial-gradient(var(--accent) 0.5px, transparent 0.5px),
+    radial-gradient(var(--accent) 0.5px, var(--primary-bg) 0.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-attachment: fixed;
 }
 
 * {
@@ -372,6 +383,29 @@ a {
 
 .project-card:hover .project-link-text::after {
   width: 100%;
+}
+
+/* Team Cards specific styles */
+.team-card {
+  background: var(--white) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.team-card .project-image {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px 20px 0 0;
+}
+
+.team-card .project-image img {
+  object-position: center 20%;
+}
+
+.team-card .project-hover {
+  background: rgba(140, 144, 113, 0.2) !important;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
 }
 
 .pillars-section {
@@ -814,23 +848,158 @@ a {
 }
 
 /* Admin Dashboard Styles */
-.admin-login-container {
+/* Serene Logic Login Design System */
+
+.serene-login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: var(--primary-bg);
+  background: #f8faef;
+  padding: 20px;
+  font-family: 'Manrope', sans-serif;
+  color: #191d16;
 }
 
-.admin-login-box {
+.serene-login-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  /* 24px */
+  padding: 40px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.serene-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  color: #356a1b;
+  /* primary */
+}
+
+.serene-icon {
+  color: inherit;
+}
+
+.serene-headline {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #191d16;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .serene-headline {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.serene-body-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #42493c;
+  /* on-surface-variant */
+  margin: 0 0 8px 0;
+}
+
+.serene-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* md spacing between groups */
+  text-align: left;
+}
+
+.serene-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* sm spacing */
+}
+
+.serene-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #191d16;
+}
+
+.serene-input {
+  background: #f3f5ea;
+  /* surface-container-low */
+  border: 1px solid #c1c9b8;
+  /* outline-variant */
+  border-radius: 0.5rem;
+  /* 8px */
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #191d16;
+  transition: all 0.2s ease-in-out;
+}
+
+.serene-input::placeholder {
+  color: #72796b;
+  /* outline */
+}
+
+.serene-input:focus {
+  outline: none;
+  border-color: #356a1b;
+  /* primary */
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #356a1b;
+}
+
+.serene-error-box {
+  background: #ffdad6;
+  /* error-container */
+  color: #ba1a1a;
+  /* error */
+  padding: 12px 16px;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
   text-align: center;
 }
 
-.admin-icon {
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+.serene-btn-primary {
+  background: #356a1b;
+  /* primary */
+  color: #ffffff;
+  /* on-primary */
+  border: none;
+  border-radius: 0.5rem;
+  /* 8px */
+  min-height: 48px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(53, 106, 27, 0.15);
+  margin-top: 8px;
+}
+
+.serene-btn-primary:hover {
+  background: #2a5415;
+  /* darker primary */
+  box-shadow: 0px 6px 14px rgba(53, 106, 27, 0.2);
+  transform: translateY(-1px);
+}
+
+.serene-btn-primary:active {
+  transform: translateY(0);
 }
 
 .admin-dashboard {

@@ -45,19 +45,31 @@ export default function MeetingDetails() {
                         <h2 className="text-2xl font-semibold text-[#333]">Gravação do Encontro</h2>
                     </div>
 
-                    {/* Placeholder Video Player */}
-                    <div className="w-full aspect-video bg-gray-100 rounded-[2rem] overflow-hidden shadow-sm relative group cursor-pointer">
-                        <img
-                            src={meeting.image || "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80"}
-                            alt="Video Thumbnail"
-                            className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:bg-white transition-colors duration-300">
-                                <Play size={32} className="text-[#333] ml-2" />
+                    {/* Video Player */}
+                    {meeting.videoUrl ? (
+                        <div className="w-full aspect-video rounded-[2rem] overflow-hidden shadow-sm">
+                            <iframe 
+                                className="w-full h-full border-0" 
+                                src={meeting.videoUrl} 
+                                title="YouTube video player" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    ) : (
+                        <div className="w-full aspect-video bg-gray-100 rounded-[2rem] overflow-hidden shadow-sm relative group cursor-pointer">
+                            <img
+                                src={meeting.image || "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80"}
+                                alt="Video Thumbnail"
+                                className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:bg-white transition-colors duration-300">
+                                    <Play size={32} className="text-[#333] ml-2" />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
 
                     <div className="mt-8 bg-[#f8f5f4] p-8 md:p-10 rounded-[2rem] border border-gray-100">
                         <h3 className="text-xs font-semibold text-[#555] uppercase tracking-[0.2em] mb-4">Resumo Expandido</h3>

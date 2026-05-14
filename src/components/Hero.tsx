@@ -30,7 +30,7 @@ export default function Hero() {
                     style={{ willChange: 'transform' }}
                 >
                     <video
-                        src="./assets/0306-01.mp4"
+                        src={`${import.meta.env.BASE_URL}assets/0306-01.mp4`}
                         autoPlay
                         loop
                         muted
